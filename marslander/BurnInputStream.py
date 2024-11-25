@@ -14,3 +14,4 @@ class BurnInputStream:
 # status = None  # Replace with actual DescentEvent object
 # burn = burn_input_stream.get_next_burn(status)
 # print(burn)
+

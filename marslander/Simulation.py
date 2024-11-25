@@ -14,7 +14,7 @@ class Simulation:
 
     def __init__(self, vehicle):
         self.vehicle = vehicle
-
+        
     @staticmethod
     def random_altitude():
         max_altitude = 20000
@@ -61,10 +61,11 @@ class Simulation:
         while self.vehicle.still_flying():
             status = self.vehicle.get_status(burn_interval)
             print(f"{status}\t\t")
+            #to implement onboardComputer here
             self.vehicle.adjust_for_burn(burn_source.get_next_burn(status))
             if self.vehicle.out_of_fuel():
                 break
-            burn_interval += 1
+            burn_interval += 10
             if burn_interval % 9 == 0:
                 self.print_string(self.get_header())
         self.print_string(self.vehicle.check_final_status())
@@ -81,7 +82,6 @@ class Simulation:
         # pass the new BurnInputStream to the run_simulation method
         result = game.run_simulation(burnSource)
         return result
-
 
 if __name__ == '__main__':
     Simulation.main()

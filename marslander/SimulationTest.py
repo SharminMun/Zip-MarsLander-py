@@ -10,7 +10,6 @@ from DescentEvent import DescentEvent
 from BurnInputStream import BurnInputStream
 
 class SimulationTest(unittest.TestCase):
-
     def test_runSimulationLanding(self):
         burns = [200, 200, 200, 200, 200, 200, 200, 200, 200,
                  100, 100, 100, 100,
